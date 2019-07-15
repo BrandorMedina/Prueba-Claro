@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Lista de Usuarios
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="listadeusuarios">
+
+    <h1 class="claro">Claro Prueba</h1>
+
+
+    <div> <!--Muestra de los usuarios-->
+  <ion-list class="listCustomized" class="listadeusuarios">
+    <!--Ciclo para recorrer todos los usuarios almacenados-->
+    <ion-item *ngFor="let user of users" (click)="itemSelected(user)">
+      <ion-avatar item-start>
+        <!--Foto del usuario-->
+        <img [src]="user.picture.medium">
+      </ion-avatar>
+      <!--Nombre y Apellido del usuario-->
+      <h2>{{user.name.first | uppercase}} {{user.name.last | uppercase}}</h2>
+      <!--Edad del usuario-->
+      <p>Tengo {{user.dob.age}} años de edad</p>
+    </ion-item>
+  </ion-list>
+</div>
+
+</ion-content>
